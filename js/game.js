@@ -29,7 +29,6 @@ function init() {
 
     gGame.foodCount = 0
 
-    // Count food on the board
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[i].length; j++) {
             if (gBoard[i][j] === FOOD || gBoard[i][j] === SUPER_FOOD) {
@@ -38,7 +37,6 @@ function init() {
         }
     }
 
-    // Count food under ghosts
     for (var i = 0; i < gGhosts.length; i++) {
         if (gGhosts[i].currCellContent === FOOD ||
             gGhosts[i].currCellContent === SUPER_FOOD) {

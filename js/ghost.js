@@ -65,18 +65,14 @@ function moveGhost(ghost) {
         return
     }
 
-    // model
     gBoard[ghost.location.i][ghost.location.j] = ghost.currCellContent
 
-    // DOM
     renderCell(ghost.location, ghost.currCellContent)
 
-    // model
     ghost.location = nextLocation
     ghost.currCellContent = gBoard[ghost.location.i][ghost.location.j]
     gBoard[ghost.location.i][ghost.location.j] = GHOST
 
-    // DOM
     renderCell(ghost.location, getGhostHTML(ghost))
 }
 

@@ -22,14 +22,13 @@ function createPacman(board) {
 function movePacman(ev) {
 
     if (!gGame.isOn) return
-    // console.log('ev', ev);
+    
     const nextLocation = getNextLocation(ev)
 
     if (!nextLocation) return
-    // console.log('nextLocation', nextLocation)
-
+    
     var nextCell = gBoard[nextLocation.i][nextLocation.j]
-    // console.log('NEXT CELL', nextCell)
+    
 
     if (nextCell === WALL) return
 
@@ -74,14 +73,12 @@ function movePacman(ev) {
 
     gBoard[gPacman.location.i][gPacman.location.j] = EMPTY
 
-    // update the DOM
     renderCell(gPacman.location, EMPTY)
 
 
     gPacman.location = nextLocation
     gBoard[gPacman.location.i][gPacman.location.j] = PACMAN
 
-    // update the DOM
     renderCell(gPacman.location, getPacmanHTML())
 
     if (gGame.foodCount === 0) {
